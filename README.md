@@ -1,64 +1,57 @@
-# Orbital Railgun (NeoForge 1.21.1)
+# Orbital Railgun — NeoForge 26.1.1 Port
 
-This project is a **NeoForge (Minecraft 1.21.1)** port of the original [Orbital Railgun](https://github.com/Mishkis/orbital-railgun) mod by Mishkis.
-Maintained and ported by **Nxkoo**.
+Unofficial port of **Orbital Railgun** for **Minecraft 26.1.1 / NeoForge**.
 
-It targets **Java 21** and utilizes the NeoForge event bus system to bring high-fidelity railgun mechanics and shaders to modern Minecraft versions.
+This fork is based on the NeoForge 1.21.1 port and updates the mod to work on Minecraft 26.1.1. The goal of this port is to preserve the original gameplay and visual style of the mod while making it usable on modern NeoForge builds.
 
-## 🚀 Notable Port Changes
+## Features
 
-* **NeoForge Architecture:** The codebase has been migrated to support the NeoForge 21.1.x architecture.
-    * Fixed event bus subscriptions to separate `MOD` bus (initialization) and `GAME` bus (ticking/rendering) correctly.
-    * Updated `ClientTickEvent` implementation to support the new non-abstract NeoForge event structure.
-* **Rendering Pipeline:** Post-processing is implemented using the vanilla `PostChain` API and custom shader instances, mirroring the original visual effects.
-    * Includes compatibility checks for **Iris/Oculus**: The mod automatically detects active shaderpacks and adjusts the railgun rendering pipeline to prevent conflicts/crashes.
-* **State Management:** `RailgunState` tracks charging, cooldowns, and strike data. Logic has been updated to handle 1.21 game loop changes.
-* **Claims Compatibility:** Integrated support for **FTB Chunks** and **Open Parties & Claims**. The railgun respects land claims with configurable rules for griefing prevention.
+- Orbital Railgun item
+- Survival crafting recipe
+- Server-side orbital strike logic
+- Configurable range, cooldown, damage and destruction parameters
+- World-space post-processing shader effects based on the original visual style
+- 3D item model for inventory, hand and dropped item rendering
+- In-game NeoForge config screen
+- Block blacklist and destruction settings
+- Optional entity pull / impact behavior
+- Experimental protection compatibility layer for claim mods
 
-## 🛠️ Development
+## Requirements
 
-* **Java 21** toolchain (Required for Minecraft 1.21+).
-* **NeoForge** (21.1.x).
-* **GeckoLib 4** (Required dependency for animations).
+- Minecraft Java Edition 26.1.1
+- NeoForge 26.1.1
+- Java 25
+- GeckoLib 5 for NeoForge 26.1
 
-### Building
+Both client and server need this mod installed.
 
-To build the mod JAR:
+## Status
 
-```bash
-./gradlew build
-```
+This port is currently experimental but playable.
 
-### Running the Client
+Working:
+- Item registration
+- Crafting
+- Cooldown
+- Sounds
+- Orbital strike destruction
+- Shader-based visual effects
+- Config screen
+- Static 3D item model
 
-To run the mod in a development environment:
+Still experimental:
+- FTB Chunks / Open Parties & Claims compatibility
+- Shaderpack compatibility guard
+- Full GeckoLib animated item renderer
 
-```bash
-./gradlew runClient
-```
+## Credits
 
-## ⚙️ Configuration
-
-Configuration files are located in `config/orbital_railgun-common.toml`.
-
-### Claim Protection
-
-* `respectClaims`: Master switch for FTB Chunks/OPAC protection.
-* `allowEntityDamageInClaims`: Allow damaging mobs/players inside claimed chunks.
-* `allowBlockBreakInClaims`: Allow the explosion to break blocks in claimed chunks.
-* `opsBypassClaims`: Server operators bypass all claim checks.
-
-### Visuals & Balance
-
-* `destructionDiameter`: The size of the crater created by the strike.
-* `shaderDiameter`: Visual size of the beam effect.
-
-## ⚠️ Credits
-
-* **Nxkoo** - NeoForge 1.21.1 Port & Maintainer.
-* **Mishkis** - Original Mod Author.
-* **TysonTheEmber** - Previous Forge Porting work.
+Original Orbital Railgun mod by Mishkis.  
+NeoForge 1.21.1 port by Nxkoo.  
+This repository is an unofficial port/fork for Minecraft 26.1.1.
 
 ## License
 
-This project follows the license of the original repository. Please refer to the LICENSE file for details.
+This project follows the license of the original project.  
+Original license files and attribution should be preserved.
