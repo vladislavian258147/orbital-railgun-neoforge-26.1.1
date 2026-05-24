@@ -28,10 +28,7 @@ Both client and server need this mod installed.
 
 ## Status
 
-This port is currently experimental but playable.
-
 Working:
-- Item registration
 - Crafting
 - Cooldown
 - Sounds
@@ -49,7 +46,8 @@ Still experimental:
 
 Original Orbital Railgun mod by Mishkis.  
 NeoForge 1.21.1 port by Nxkoo.  
-This repository is an unofficial port/fork for Minecraft 26.1.1.
+Vladislavian258 - NeoForge 26.1.1 Port & Maintainer of this repository 
+This is an unofficial port/fork for Minecraft 26.1.1.
 
 ## License
 
